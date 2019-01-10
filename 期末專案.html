@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-tw" lang="zh-tw">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>喜從天降-紅包雨</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<style>
+h1{text-align:right;color:#e65c00;text-shadow: 2px 2px 5px  #ff66cc;}
+h3{text-align:right;color:#b82e8a;}
+p{text-align:right;color: #663300;}
+#board { position: absolute; }
+#header {height:700px;background-image:url("http://img0.sc115.com/uploads/sc/jpgs/07/pic6393_sc115.com.jpg");background-repeat:no-repeat;background-size:cover;padding:1em}
+.animate {
+width: 2px; height: 2px; position: absolute; background: #ffff80;
+}
+</style>
+
+
+<body>
+<div id="header">
+<h1>~~~~~~~~~~~~~~~~~~~~~新年~~~~~~~~~~~~~~~~~~~~~
+<br>「紅包」是華人新年的一種習俗，華人喜愛紅色，
+<br>因為紅色象徵活力、愉快與好運。 發紅包給未成年
+<br>的晚輩，是表示把祝願和好運帶給他們。紅包裡的
+<br>錢，是要讓孩子們開心，其主要意義是在紅紙，因
+<br>它象徵好運。</h1>
+<h3>
+<br>找找樂~~~~~~~~~~~~~~~~~~~~~~~
+<br>點擊紅包~說不定有驚喜*´﹃｀*</h3>
+</div>
+
+<script>
+for (variable=1;variable<=10000;variable=variable+1) {
+var x = Math.floor((Math.random() * 500) + 1);
+var y = Math.sqrt(160000-x*x) - Math.floor((Math.random() *400)+30 );
+var elem = document.createElement("div");
+elem.setAttribute("class", "animate");
+elem.style.left = x + "px";
+elem.style.top = y + "px";
+document.body.appendChild(elem);
+}
+</script>
+
+
+
+<script type='text/javascript'>
+var time=15000;
+function DisableEnable(objid){
+if(time<=0){
+document.getElementById(objid).value='*新年快樂*';
+document.getElementById(objid).disabled=false;
+}else{
+document.getElementById(objid).disabled = true;
+document.getElementById(objid).value = (time/1000) + " sec";
+setTimeout("DisableEnable('" + objid + "')",1000);
+}
+time-=1000; 
+}
+</script>
+<form name="form1">
+<label>新年就要</label>
+<input type="text" name="score" size="7" value="888">
+				
+<input type=button value="開始" id=button1 onclick=DisableEnable(this.id)>
+</body>
+
+
+
+
+<style>
+#board { position: absolute; }
+</style>
+<body onkeydown="eval(event)">
+<div id="board">
+<img src="人物3.png" width="150"; height="180">
+</div>
+
+<h2>獎勵時間-
+<br>在新的一年
+<br>天天有好運</h2>
+<br><br><br>
+
+<script>
+$(document).ready(function(){
+$("#p1").hover(function(){
+alert("恭喜得到祝福語!豬事順利豬諸事順心又順利，新年吉祥又如意");
+});
+});
+</script>
+
+<body>
+<p id="p1">發現了嗎？點我點我!!!!!</p>
+</body>
+
+
+
+
+<script>
+function eval(event) {
+var elem = document.getElementById("board");
+var x = elem.offsetLeft || 0;
+var y = elem.offsetTop|| 0;
+var key = event.which || event.keyCode;
+switch(key){
+
+case 37:
+elem.style.left = (x-30) + 'px';
+break;
+case 39:
+elem.style.left = (x+30) + 'px';
+break;
+}
+}
+</script>
+ 
+<div style="width: 100px;" class="redpackoriginal">
+<svg version="1.1" id="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2300 1212" style="enable-background:new 0 0 2300 1212;" xml:space="preserve">
+<g>
+<polygon style="fill:#A83535;" points="0,294 0,1212 2300,1212 2300,294 1150,515  " />
+</g>
+<g>
+<polygon style="fill:#CC5A5A;" points="0,294 1150,515 2300,294 2300,0 0,0    " />
+</g>
+</svg></div>
+ 
+<script type="text/javascript">
+$(function() {
+ 
+var divceWidth = $(window).width(); 
+var divceHeight = $(window).height(); 
+var redpackoriginal=$(".redpackoriginal").html(); 
+ 
+function inputredpack() { 
+ 
+var redPackLeft = Math.random() * divceWidth; 
+var redPackEndDir = Math.random() * divceWidth; 
+ 
+var redpack = $("<div>"); 
+$("body").append(redpack); 
+redpack.css({ 
+"position": "absolute",
+"top": "-100px",
+"left": redPackLeft,
+"width": "100px",
+"transform": "rotate(50deg)"
+ 
+});
+ 
+redpack.html(redpackoriginal); 
+ 
+redpack.stop().animate({ top: divceHeight, left: redPackEndDir }, 6000, function() { redpack.remove(); });
+ 
+redpack.click(function() { 
+alert("一元復始，萬象更新!!(っ´▽｀)っ")
+})
+};
+
+var start = setInterval(inputredpack, 600);
+})
+</script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-
+FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
